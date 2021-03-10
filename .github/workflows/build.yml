@@ -1,0 +1,12 @@
+name: build
+on: [push]
+jobs:
+  build-nuxt-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: cd src
+      - run: yarn install
+      - run: yarn run build
+      - run: yarn run generate
