@@ -6,7 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: cd src
-      - run: yarn install
-      - run: yarn run build
-      - run: yarn run generate
+      - run: ls
+      - run: ls src
+      #- run: yarn install
+      #- run: yarn run build
+      #- run: yarn run generate
