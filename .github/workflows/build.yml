@@ -1,13 +1,16 @@
 name: build
 on: [push]
+
+
 jobs:
   build-nuxt-app:
+    defaults:
+      run:
+        working-directory: ./src
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: ls
-      - run: ls src
-      #- run: yarn install
-      #- run: yarn run build
-      #- run: yarn run generate
+      - run: yarn install
+      - run: yarn run build
+      - run: yarn run generate
