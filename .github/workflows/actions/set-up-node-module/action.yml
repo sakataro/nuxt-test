@@ -1,0 +1,13 @@
+name: 'set up node modules'
+description: 'aaaa'
+runs:
+  steps:
+    - uses: actions/setup-node@v1
+    - name: Cache node modules
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+    - run: yarn install
