@@ -35,5 +35,5 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - run: |
-         yarn install
+         yarn  install
          yarn run test
